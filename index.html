@@ -13,6 +13,7 @@
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
@@ -38,6 +39,7 @@ nav a{
     text-decoration:none;
     color:#4b5563;
     font-weight:500;
+    transition:0.3s;
 }
 
 nav a:hover{
@@ -52,17 +54,17 @@ nav a:hover{
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:100px 20px 40px;
+    padding:140px 20px 60px;
 }
 
 .hero img{
-    width:160px;
-    height:160px;
+    width:170px;
+    height:170px;
     border-radius:50%;
     object-fit:cover;
-    margin-bottom:20px;
+    margin-bottom:25px;
     border:6px solid white;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    box-shadow:0 15px 35px rgba(0,0,0,0.1);
 }
 
 .hero h1{
@@ -78,29 +80,21 @@ nav a:hover{
 
 .hero p{
     max-width:700px;
-    margin:20px auto;
+    margin:25px auto;
     font-size:18px;
     color:#4b5563;
+    line-height:1.6;
 }
 
 /* BUTTON */
 .btn{
     display:inline-block;
-    padding:12px 25px;
+    padding:12px 28px;
     border-radius:30px;
     text-decoration:none;
     margin:10px;
     font-weight:600;
     transition:0.3s;
-}
-
-.btn-dark{
-    background:#111827;
-    color:white;
-}
-
-.btn-dark:hover{
-    background:#374151;
 }
 
 .btn-gradient{
@@ -112,40 +106,76 @@ nav a:hover{
     opacity:0.85;
 }
 
+.btn-dark{
+    background:#111827;
+    color:white;
+}
+
+.btn-dark:hover{
+    background:#374151;
+}
+
 /* SECTION */
 section{
-    padding:80px 10%;
+    padding:100px 10%;
 }
 
 section h2{
     text-align:center;
-    margin-bottom:40px;
+    margin-bottom:50px;
     font-size:32px;
 }
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
 }
 
 .card{
     background:white;
-    padding:20px;
+    padding:25px;
     border-radius:15px;
     box-shadow:0 10px 25px rgba(0,0,0,0.05);
     transition:0.3s;
 }
 
 .card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-8px);
 }
 
+/* CONTACT */
+.contact{
+    text-align:center;
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* FOOTER */
 footer{
     text-align:center;
-    padding:20px;
+    padding:25px;
     background:#111827;
     color:white;
+    margin-top:50px;
+}
+
+/* PRINT VERSION */
+@media print {
+    nav {
+        display:none;
+    }
+    body{
+        background:white;
+        color:black;
+    }
+    footer{
+        background:white;
+        color:black;
+    }
+    .btn{
+        display:none;
+    }
 }
 </style>
 </head>
@@ -157,6 +187,7 @@ footer{
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
 </nav>
 
 <div class="hero">
@@ -169,7 +200,9 @@ footer{
     </p>
 
     <div>
-        <a href="https://drive.google.com/file/d/17kPZLOx2Tp5bum_190S_wSRgtG2TkthW/view?usp=sharing" class="btn btn-gradient">Download Resume</a>
+        <a href="https://drive.google.com/file/d/17kPZLOx2Tp5bum_190S_wSRgtG2TkthW/view?usp=sharing" target="_blank" class="btn btn-gradient">
+            Download Resume
+        </a>
     </div>
 </div>
 
@@ -227,9 +260,14 @@ footer{
     </div>
 </section>
 
-    <a href="Revo-Hanafi-Portfolio.pdf" download class="btn btn-gradient">
-Download Portfolio PDF
-</a>
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+        📧 revohanafi04@gmail.com <br>
+        📱 081378838574 <br>
+        📍 Padang, Indonesia
+    </div>
+</section>
 
 <footer>
     © 2026 Revo Hanafi | Portfolio Website
