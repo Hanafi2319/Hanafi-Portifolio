@@ -161,20 +161,27 @@ footer{
 }
 
 /* PRINT VERSION */
-@media print {
-    nav {
-        display:none;
+  @media print {
+    nav, .social {
+        display: none;
     }
-    body{
-        background:white;
-        color:black;
+
+    body {
+        background: white;
+        color: black;
     }
-    footer{
-        background:white;
-        color:black;
+
+    footer {
+        background: white;
+        color: black;
     }
-    .btn{
-        display:none;
+
+    .btn {
+        display: none;
+    }
+
+    section {
+        page-break-inside: avoid;
     }
 }
 </style>
