@@ -106,15 +106,6 @@ nav a:hover{
     opacity:0.85;
 }
 
-.btn-dark{
-    background:#111827;
-    color:white;
-}
-
-.btn-dark:hover{
-    background:#374151;
-}
-
 /* SECTION */
 section{
     padding:100px 10%;
@@ -126,22 +117,62 @@ section h2{
     font-size:32px;
 }
 
+/* CARDS */
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
 }
 
 .card{
     background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.05);
-    transition:0.3s;
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
+    transition:all 0.3s ease;
+    overflow:hidden;
+    position:relative;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    height:4px;
+    width:100%;
+    background:linear-gradient(90deg,#4f46e5,#9333ea);
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* IMAGE PROJECT */
+.project-img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+    transition:0.4s;
+}
+
+.card:hover .project-img{
+    transform:scale(1.08);
+}
+
+/* TEXT */
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    margin-bottom:8px;
+    font-size:20px;
+}
+
+.card p{
+    font-size:15px;
+    color:#6b7280;
 }
 
 /* CONTACT */
@@ -159,31 +190,6 @@ footer{
     color:white;
     margin-top:50px;
 }
-
-/* PRINT VERSION */
-  @media print {
-    nav, .social {
-        display: none;
-    }
-
-    body {
-        background: white;
-        color: black;
-    }
-
-    footer {
-        background: white;
-        color: black;
-    }
-
-    .btn {
-        display: none;
-    }
-
-    section {
-        page-break-inside: avoid;
-    }
-}
 </style>
 </head>
 
@@ -198,7 +204,9 @@ footer{
 </nav>
 
 <div class="hero">
-    <img src="https://raw.githubusercontent.com/Hanafi2319/Hanafi-Portifolio/refs/heads/main/WhatsApp%20Image%202025-12-11%20at%2020.08.25_4b983e77.jpg" alt="Profile Photo">
+    <!-- FIX LINK -->
+    <img src="https://raw.githubusercontent.com/Hanafi2319/Hanafi-Portifolio/main/WhatsApp%20Image%202025-12-11%20at%2020.08.25_4b983e77.jpg" alt="Profile Photo">
+
     <h1>Hi, I'm <span class="gradient-text">Revo Hanafi</span></h1>
     <p>
         Network Engineer & IT Support enthusiast with experience in Web Development,
@@ -206,65 +214,77 @@ footer{
         Passionate about solving technical problems and building efficient systems.
     </p>
 
-    <div>
-        <a href="https://drive.google.com/file/d/17kPZLOx2Tp5bum_190S_wSRgtG2TkthW/view?usp=sharing" target="_blank" class="btn btn-gradient">
-            Download Resume
-        </a>
-    </div>
+    <a href="https://drive.google.com/file/d/17kPZLOx2Tp5bum_190S_wSRgtG2TkthW/view?usp=sharing" target="_blank" class="btn btn-gradient">
+        Download Resume
+    </a>
 </div>
 
 <section id="skills">
     <h2>Technical Skills</h2>
     <div class="cards">
-        <div class="card">
+        <div class="card"><div class="card-content">
             <h3>Networking</h3>
             <p>MikroTik, VLAN, Routing, Firewall, Cisco Packet Tracer</p>
-        </div>
-        <div class="card">
+        </div></div>
+
+        <div class="card"><div class="card-content">
             <h3>Web Development</h3>
             <p>PHP, HTML, CSS, JavaScript</p>
-        </div>
-        <div class="card">
+        </div></div>
+
+        <div class="card"><div class="card-content">
             <h3>Cloud & Server</h3>
             <p>DNS, DHCP, Web Server, Basic AWS/Azure/GCP</p>
-        </div>
-        <div class="card">
+        </div></div>
+
+        <div class="card"><div class="card-content">
             <h3>IT Support</h3>
             <p>Troubleshooting, Maintenance, User Support</p>
-        </div>
+        </div></div>
     </div>
 </section>
 
 <section id="projects">
     <h2>Projects</h2>
     <div class="cards">
-         <div class="card">
-             <img src="https://raw.githubusercontent.com/Hanafi2319/Hanafi-Portifolio/main/Screenshot%202025-02-11%20090606.png" alt="Website GIS Sekolah" class="project-img">
-            <h3>Website GIS Sekolah</h3>
-            <p>Web-based GIS system for mapping schools in Padang.</p>
-        </div>
+
         <div class="card">
-            <h3>Local Server Implementation</h3>
-            <p>DNS, DHCP, Web Server setup & network troubleshooting.</p>
+            <img src="https://raw.githubusercontent.com/Hanafi2319/Hanafi-Portifolio/main/Screenshot%202025-02-11%20090606.png" class="project-img" loading="lazy">
+            <div class="card-content">
+                <h3>Website GIS Sekolah</h3>
+                <p>Web-based GIS system for mapping schools in Padang.</p>
+            </div>
         </div>
+
         <div class="card">
-            <h3>Network Topology Simulation</h3>
-            <p>VLAN & Routing simulation using Cisco Packet Tracer.</p>
+            <div class="card-content">
+                <h3>Local Server Implementation</h3>
+                <p>DNS, DHCP, Web Server setup & network troubleshooting.</p>
+            </div>
         </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>Network Topology Simulation</h3>
+                <p>VLAN & Routing simulation using Cisco Packet Tracer.</p>
+            </div>
+        </div>
+
     </div>
 </section>
 
 <section id="experience">
     <h2>Experience</h2>
     <div class="cards">
-        <div class="card">
+        <div class="card"><div class="card-content">
             <h3>IT Support Intern</h3>
             <p>PT Konsulindo Informatika Perdana (2024)</p>
-        </div>
-        <div class="card">
+        </div></div>
+
+        <div class="card"><div class="card-content">
             <h3>Assistant Lecturer</h3>
             <p>Universitas Bung Hatta (2022–2025)</p>
-        </div>
+        </div></div>
     </div>
 </section>
 
